@@ -13,3 +13,5 @@ C:\Users\capta\Desktop\Misc\Programming\CSharp\BoostDraftTest\BoostDraftTest\Boo
 C:\Users\capta\Desktop\Misc\Programming\CSharp\BoostDraftTest\BoostDraftTest\BoostDraftTest\obj\Debug\net7.0\BoostDraftTest.pdb
 C:\Users\capta\Desktop\Misc\Programming\CSharp\BoostDraftTest\BoostDraftTest\BoostDraftTest\obj\Debug\net7.0\BoostDraftTest.genruntimeconfig.cache
 C:\Users\capta\Desktop\Misc\Programming\CSharp\BoostDraftTest\BoostDraftTest\BoostDraftTest\obj\Debug\net7.0\ref\BoostDraftTest.dll
+C:\Users\capta\Desktop\Misc\Programming\CSharp\BoostDraftTest\BoostDraftTest\BoostDraftTest\bin\Debug\net7.0\nunit.framework.dll
+C:\Users\capta\Desktop\Misc\Programming\CSharp\BoostDraftTest\BoostDraftTest\BoostDraftTest\obj\Debug\net7.0\BoostDraftTest.csproj.CopyComplete

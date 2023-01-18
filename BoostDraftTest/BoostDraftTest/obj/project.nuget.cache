@@ -1,8 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "Zq1vN52vKS3ZyBwytWFW5MxptRVvXkjviR6SAs5XOpr8iT6jQ/tY1RD4a+VZgMEmX7wRPZRd+SmP0tDk8B7rfw==",
+  "dgSpecHash": "DeJmGXpimtwr81qG579PxHDgF+1pB0dSxZ1nVkASHXeO7fw0X+8jVq+14PPFJZGbNRBdkt7GuYQUomYuNsCr7A==",
   "success": true,
   "projectFilePath": "C:\\Users\\capta\\Desktop\\Misc\\Programming\\CSharp\\BoostDraftTest\\BoostDraftTest\\BoostDraftTest\\BoostDraftTest.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\capta\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\capta\\.nuget\\packages\\netstandard.library\\2.0.0\\netstandard.library.2.0.0.nupkg.sha512",
+    "C:\\Users\\capta\\.nuget\\packages\\nunit\\3.13.3\\nunit.3.13.3.nupkg.sha512",
+    "C:\\Users\\capta\\.nuget\\packages\\nunit.console\\3.16.2\\nunit.console.3.16.2.nupkg.sha512",
+    "C:\\Users\\capta\\.nuget\\packages\\nunit.consolerunner\\3.16.2\\nunit.consolerunner.3.16.2.nupkg.sha512",
+    "C:\\Users\\capta\\.nuget\\packages\\nunit.extension.nunitprojectloader\\3.6.0\\nunit.extension.nunitprojectloader.3.6.0.nupkg.sha512",
+    "C:\\Users\\capta\\.nuget\\packages\\nunit.extension.nunitv2driver\\3.8.0\\nunit.extension.nunitv2driver.3.8.0.nupkg.sha512",
+    "C:\\Users\\capta\\.nuget\\packages\\nunit.extension.nunitv2resultwriter\\3.6.0\\nunit.extension.nunitv2resultwriter.3.6.0.nupkg.sha512",
+    "C:\\Users\\capta\\.nuget\\packages\\nunit.extension.teamcityeventlistener\\1.0.7\\nunit.extension.teamcityeventlistener.1.0.7.nupkg.sha512",
+    "C:\\Users\\capta\\.nuget\\packages\\nunit.extension.vsprojectloader\\3.8.0\\nunit.extension.vsprojectloader.3.8.0.nupkg.sha512"
+  ],
   "logs": []
 }
