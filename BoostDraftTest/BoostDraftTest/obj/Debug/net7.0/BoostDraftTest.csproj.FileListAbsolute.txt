@@ -1,0 +1,15 @@
+C:\Users\capta\Desktop\Misc\Programming\CSharp\BoostDraftTest\BoostDraftTest\BoostDraftTest\obj\Debug\net7.0\BoostDraftTest.csproj.AssemblyReference.cache
+C:\Users\capta\Desktop\Misc\Programming\CSharp\BoostDraftTest\BoostDraftTest\BoostDraftTest\obj\Debug\net7.0\BoostDraftTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\capta\Desktop\Misc\Programming\CSharp\BoostDraftTest\BoostDraftTest\BoostDraftTest\obj\Debug\net7.0\BoostDraftTest.AssemblyInfoInputs.cache
+C:\Users\capta\Desktop\Misc\Programming\CSharp\BoostDraftTest\BoostDraftTest\BoostDraftTest\obj\Debug\net7.0\BoostDraftTest.AssemblyInfo.cs
+C:\Users\capta\Desktop\Misc\Programming\CSharp\BoostDraftTest\BoostDraftTest\BoostDraftTest\obj\Debug\net7.0\BoostDraftTest.csproj.CoreCompileInputs.cache
+C:\Users\capta\Desktop\Misc\Programming\CSharp\BoostDraftTest\BoostDraftTest\BoostDraftTest\bin\Debug\net7.0\BoostDraftTest.exe
+C:\Users\capta\Desktop\Misc\Programming\CSharp\BoostDraftTest\BoostDraftTest\BoostDraftTest\bin\Debug\net7.0\BoostDraftTest.deps.json
+C:\Users\capta\Desktop\Misc\Programming\CSharp\BoostDraftTest\BoostDraftTest\BoostDraftTest\bin\Debug\net7.0\BoostDraftTest.runtimeconfig.json
+C:\Users\capta\Desktop\Misc\Programming\CSharp\BoostDraftTest\BoostDraftTest\BoostDraftTest\bin\Debug\net7.0\BoostDraftTest.dll
+C:\Users\capta\Desktop\Misc\Programming\CSharp\BoostDraftTest\BoostDraftTest\BoostDraftTest\bin\Debug\net7.0\BoostDraftTest.pdb
+C:\Users\capta\Desktop\Misc\Programming\CSharp\BoostDraftTest\BoostDraftTest\BoostDraftTest\obj\Debug\net7.0\BoostDraftTest.dll
+C:\Users\capta\Desktop\Misc\Programming\CSharp\BoostDraftTest\BoostDraftTest\BoostDraftTest\obj\Debug\net7.0\refint\BoostDraftTest.dll
+C:\Users\capta\Desktop\Misc\Programming\CSharp\BoostDraftTest\BoostDraftTest\BoostDraftTest\obj\Debug\net7.0\BoostDraftTest.pdb
+C:\Users\capta\Desktop\Misc\Programming\CSharp\BoostDraftTest\BoostDraftTest\BoostDraftTest\obj\Debug\net7.0\BoostDraftTest.genruntimeconfig.cache
+C:\Users\capta\Desktop\Misc\Programming\CSharp\BoostDraftTest\BoostDraftTest\BoostDraftTest\obj\Debug\net7.0\ref\BoostDraftTest.dll
