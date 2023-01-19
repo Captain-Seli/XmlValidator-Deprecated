@@ -18,9 +18,8 @@ namespace BoostDraftTest
          * 
          */
 
-   
+
         /* Tokenize each tag within the XML string
-         * This method is broken
          * Need to trim off leading and trailing whitespace
          * Add the find tags check into Tokenizer
          * Behavior of this method should create tokens from an XML String: <Code>Hello World</Code> would create a list of tokens [<Code>, </Code>]
@@ -30,41 +29,41 @@ namespace BoostDraftTest
         public static List<string> tokenize(string xml)
         {
             List<string> tokens = new List<string>();
-            int start = xml.IndexOf('<');
-            int position;
+            int startIndex = 0;
+            int endIndex = 0;
+
 
             // Trim off leading and trailing whitespace
             xml = xml.TrimStart(' ');
             xml = xml.TrimEnd(' ');
-            Console.WriteLine(xml); // Remove before submission
             // If the first char is not a < then this is not a valid xml string
             if (xml[0] != '<')
             {
                 Console.WriteLine("False: Xml doesn't start with <");
                 return tokens;
             }
-            if (xml.Length > 1)
-            {
-                // Extract tokens from the string.
-                do
-                {
-                    position = xml.IndexOf('>', start);
-                    if (position >= 0) // This line makes '<' a valid xml string
-                    {
-                        tokens.Add(xml.Substring(start, position - start + 1).Trim());
-                        start = position + 1;
-                        // Strip out words Hello world</Code> -> ><
-                        int index = xml.IndexOf('<', start);
 
-                        if (index != -1)
-                        {
-                            start = index;
-                        }
-                    }
-                } while (position > 0);
+            while (startIndex < xml.Length)
+            {
+                if (xml[startIndex] == '<')
+                {
+                    endIndex = xml.IndexOf('>', startIndex);
+                    tokens.Add(xml.Substring(startIndex, endIndex - startIndex + 1));
+                    startIndex = endIndex + 1;
+                }
+                else
+                {
+                    startIndex++;
+                }
+            }
+            // Remove before submission
+            for (int i = 0; i < tokens.Count; i++)
+            {
+                Console.WriteLine("Token: " + tokens[i]);
             }
             return tokens;
         }
+
 
         // Determine the proper nesting order of the XML tokens.
         /* Redesign to utilize a Stack
@@ -91,35 +90,46 @@ namespace BoostDraftTest
 
             foreach (string token in tokens)
             {
-                // Edge Case: <a/> is valid xml but <a/><a/> is NOT valid
+                // Edge Case: <a/> is valid xml
                 if (token.StartsWith("<") && token.EndsWith("/>") && tokens.Count() == 1) 
                 { 
                     Console.WriteLine("True: <a/> style xml");
-                    isValid = false;
+                    isValid = true;
                     return isValid; 
                 }
 
-                if (token.StartsWith('<'))
-                {
-                    tagStack.Push(token.Substring(1));
-                }
-                else if (token.StartsWith("</"))
-                {
-                    string currentTag = token.Substring(2);
-                    if (tagStack.Count == 0 || currentTag != tagStack.Pop())
-                    {
-                        Console.WriteLine("False: Stack is empty or the tags don't match"); // Remove before submission
-                        isValid = false;
-                        return isValid;
-                    }
-                }
-
-                // if it's odd, it cannot have matching tokens, so return false.
+                // if stack count is odd, xml string cannot have matching tags, so return false (Not in the above format).
                 if (tokens.Count() % 2 == 1)
                 {
                     Console.WriteLine("False: Odd number of tags not in <a/> format"); // Remove before submission
                     isValid = false;
                     return isValid;
+                }
+                // Push the tokenized strings to the stack only if they are opening tags.
+                if (token.StartsWith('<') && !(token.Contains("</")))
+                {
+                    tagStack.Push(token);
+                }
+                // When the next element in the list is a closing tag compare it to the last element in the stack. Pop if they match
+                if (token.StartsWith("</"))
+                {
+                    string currentTag = token;
+                    currentTag = currentTag.Replace("/", "");
+                    Console.WriteLine("currentTag: " + currentTag);
+                    Console.WriteLine("Popped: " + tagStack.Peek());   
+                    if (currentTag == tagStack.Pop())
+                    {
+                        isValid = true;
+                        Console.WriteLine("True: Tags Match");
+                        return isValid;
+                    }
+                    // If the tags do not match, invalid XML
+                    else
+                    {
+                        isValid= false;
+                        Console.Write("False: Tags did not match.");
+                        return isValid;
+                    }
                 }
             }
             Console.WriteLine("End of Method"); // Remove before submission
