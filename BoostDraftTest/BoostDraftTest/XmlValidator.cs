@@ -23,7 +23,7 @@ namespace BoostDraftTest
          * If something is not tokenized by this method, then the string is not valid XML.
          * Line 50: System.ArgumentOutOfRangeException: 'Length cannot be less than zero.
          */
-        public static List<string> tokenize(string xml)
+        public static List<string> Tokenize(string xml)
         {
             List<string> tokens = new List<string>();
             int startIndex = 0;

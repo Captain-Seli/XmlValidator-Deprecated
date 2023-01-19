@@ -38,7 +38,7 @@ namespace BoostDraftTest
         public static bool DetermineXml(string xml)
         {
             // Tokenize the XML string and Determine proper nesting
-            List<String> tokens = XmlValidator.tokenize(xml);
+            List<String> tokens = XmlValidator.Tokenize(xml);
             bool result = XmlValidator.DetermineNestOrder(tokens);
             Console.WriteLine(result);
             return result;
