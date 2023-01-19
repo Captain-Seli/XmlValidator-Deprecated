@@ -32,13 +32,15 @@ namespace BoostDraftTest
             List<string> tokens = new List<string>();
             int start = xml.IndexOf('<');
             int position;
-           
+
+            // Trim off leading and trailing whitespace
             xml = xml.TrimStart(' ');
             xml = xml.TrimEnd(' ');
             Console.WriteLine(xml); // Remove before submission
+            // If the first char is not a < then this is not a valid xml string
             if (xml[0] != '<')
             {
-                Console.WriteLine("False");
+                Console.WriteLine("False: Xml doesn't start with <");
                 return tokens;
             }
             if (xml.Length > 1)
@@ -68,66 +70,61 @@ namespace BoostDraftTest
         /* Redesign to utilize a Stack
          * 
          */
-        public static bool determineNestOrder(List<string> tokens)
+        public static bool DetermineNestOrder(List<string> tokens)
         {
-            // Input: <Design><Code>hello world</Code></Design> Output: True
-            // Input: <Design><Code>hello world</Code></Design><People> Output: False
+            // Input: <Design><Code>hello world</Code></Design> Desired Output: True Current Output: False
+            // Input: <Design><Code>hello world</Code></Design><People> Desired Output: False Current Output: False
 
             // Things about the tags:
             // every opening tag has a closing tag
             // each open tag has to exactly string match the closing tag except for the '/' that denotes a close tag
             // all we need to do is immediately fail strings with odd numbers of tags and check that each substring in the first half of tags exists in order using math
-
-            bool isNestedProperly = false;
             Stack<string> tagStack = new Stack<string>();
-
-            // if it's odd, it cannot have matching tokens, so return false.
-            if (tokens.Count() % 2 == 1)
+            bool isValid = true;
+            // If tokens is empty, then there's no valid xml string
+            if (tokens.Count == 0)
             {
-                Console.WriteLine(isNestedProperly);
-                return isNestedProperly;
+                Console.WriteLine("False: Empty Tokens List"); // Remove before submission
+                isValid= false;
+                return isValid;
             }
 
-            // The amount of tags is equal on both sides so as the index increases, it must match the similarly decreasing index
-            // Example:
-            /*
-             * <1><2><3><text></3></2></1>
-             * |  |  |        |   |   |
-             * 0  1  2        3   4   5
-             * 
-             * [0] matches [5]
-             * [1] matches [4]
-             * [2] matches [3]
-             * 
-             */
-
-            // Break the token list in half to compare for the above
-            for (int i = 0; i < tokens.Count / 2; i++)
+            foreach (string token in tokens)
             {
-                // Peform two checks:
-                // 1. The substrings match
-                // 2. The closing tag is in the second half of the tokens list
-
-                // get the substring of the token
-                string subStr = tokens[i].Trim(new Char[] { '<', '>' });
-
-                //Check that there's no '/' in the opening tag
-                if (subStr.Contains('/'))
-                {
-                    Console.WriteLine(isNestedProperly);
-                    return isNestedProperly;
+                // Edge Case: <a/> is valid xml but <a/><a/> is NOT valid
+                if (token.StartsWith("<") && token.EndsWith("/>") && tokens.Count() == 1) 
+                { 
+                    Console.WriteLine("True: <a/> style xml");
+                    isValid = false;
+                    return isValid; 
                 }
 
-                // Check for a match and '/' in corresponding close tag
-                if (!(tokens[tokens.Count - (i + 1)].Contains(subStr)) || !(tokens[tokens.Count - (i + 1)].Contains('/')))
+                if (token.StartsWith('<'))
                 {
-                    Console.WriteLine(isNestedProperly);
-                    return isNestedProperly;
+                    tagStack.Push(token.Substring(1));
+                }
+                else if (token.StartsWith("</"))
+                {
+                    string currentTag = token.Substring(2);
+                    if (tagStack.Count == 0 || currentTag != tagStack.Pop())
+                    {
+                        Console.WriteLine("False: Stack is empty or the tags don't match"); // Remove before submission
+                        isValid = false;
+                        return isValid;
+                    }
+                }
+
+                // if it's odd, it cannot have matching tokens, so return false.
+                if (tokens.Count() % 2 == 1)
+                {
+                    Console.WriteLine("False: Odd number of tags not in <a/> format"); // Remove before submission
+                    isValid = false;
+                    return isValid;
                 }
             }
-            isNestedProperly = true;
-            Console.WriteLine(isNestedProperly);
-            return isNestedProperly;
+            Console.WriteLine("End of Method"); // Remove before submission
+            Console.WriteLine(isValid);
+            return isValid;
         }
     }
 }

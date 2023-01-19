@@ -39,9 +39,7 @@ namespace BoostDraftTest
         {
             // Tokenize the XML string and Determine proper nesting
             List<String> tokens = XmlValidator.tokenize(xml);
-            bool result = XmlValidator.determineNestOrder(tokens);
-            //Return value
-            
+            bool result = XmlValidator.DetermineNestOrder(tokens);
             return result;
         }
     }
